@@ -1,17 +1,17 @@
 exports.config = {
-  namespace: 'mycomponent',
-  outputTargets:[
-    { 
-      type: 'dist' 
+  namespace: "duiba",
+  outputTargets: [
+    {
+      type: "dist"
     },
-    { 
-      type: 'www',
+    {
+      type: "www",
       serviceWorker: false
     }
   ]
 };
 
 exports.devServer = {
-  root: 'www',
-  watchGlob: '**/**'
-}
+  root: "www",
+  watchGlob: "**/**"
+};

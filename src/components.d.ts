@@ -27,33 +27,64 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface MyComponent {
-      'first': string;
-      'last': string;
+    interface MyButton {
+      'onClick': any;
     }
   }
 
-  interface HTMLMyComponentElement extends StencilComponents.MyComponent, HTMLStencilElement {}
+  interface HTMLMyButtonElement extends StencilComponents.MyButton, HTMLStencilElement {}
 
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLMyButtonElement: {
+    prototype: HTMLMyButtonElement;
+    new (): HTMLMyButtonElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'my-button': HTMLMyButtonElement;
   }
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'my-button': HTMLMyButtonElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-component': JSXElements.MyComponentAttributes;
+      'my-button': JSXElements.MyButtonAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      'first'?: string;
-      'last'?: string;
+    export interface MyButtonAttributes extends HTMLAttributes {
+      'onClick'?: any;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface OperationList {
+      'list': Array<OperationItem>;
+    }
+  }
+
+  interface HTMLOperationListElement extends StencilComponents.OperationList, HTMLStencilElement {}
+
+  var HTMLOperationListElement: {
+    prototype: HTMLOperationListElement;
+    new (): HTMLOperationListElement;
+  };
+  interface HTMLElementTagNameMap {
+    'operation-list': HTMLOperationListElement;
+  }
+  interface ElementTagNameMap {
+    'operation-list': HTMLOperationListElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'operation-list': JSXElements.OperationListAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface OperationListAttributes extends HTMLAttributes {
+      'list'?: Array<OperationItem>;
     }
   }
 }

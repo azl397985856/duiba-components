@@ -1,0 +1,35 @@
+.operation-list {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.operation-item {
+  padding: 0.1rem 0;
+  width: 4rem;
+  display: flex;
+
+  border-bottom: 0.005rem solid #efefef;
+}
+
+.operation-section {
+  flex-direction: column;
+}
+.operation-item-cover {
+  width: 1.2rem;
+  height: 0.91rem;
+}
+
+.operation-item-title {
+  margin: 0.1rem;
+
+  font-size: 0.16rem;
+  color: #1a1a1a;
+  line-height: 0.24rem;
+}
+.operation-item-by {
+  margin: 0.1rem;
+  font-size: 0.12rem;
+  color: #999999;
+}

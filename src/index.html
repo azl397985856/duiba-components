@@ -1,15 +1,64 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" style="font-size:100px;">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+  <title>Duiba WebComponent</title>
+  <script src="/build/duiba.js"></script>
 
 </head>
+
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <operation-list></operation-list>
+
+  <my-button id="add">添加一行</my-button>
+  <my-button id="remove">减少一行</my-button>
+
+  <script>
+    function setProps(props, cmp) {
+      if (!props) return;
+      Object.keys(props).map(key => cmp[key] = props[key])
+    }
+    const operationList = document.querySelector('operation-list');
+    setProps({
+      list: [{ imgUrl: 'http://yun.dui88.com/duibaManagerWeb/znve5xfid2.jpg', title: '孙燕姿最新MV《天天年年》首播 共度充满回忆的岁末年终', by: '橘子娱乐' },
+      { imgUrl: 'http://yun.dui88.com/duibaManagerWeb/znve5xfid2.jpg', title: '苏运莹现身乡村教师颁奖礼 为公益献唱《野子》', by: '橘子娱乐' },
+      { imgUrl: 'http://yun.dui88.com/duibaManagerWeb/znve5xfid2.jpg', title: '一年到头，大家都忙着做“先锋”，张碧晨却主动“复古”', by: '橘子娱乐' }]
+    }, operationList);
+
+
+
+
+    const add = document.querySelector('#add');
+    setProps({
+      onClick() {
+        setProps({
+          list: operationList.list.concat({
+            imgUrl: 'http://yun.dui88.com/duibaManagerWeb/znve5xfid2.jpg', title: '孙燕姿最新MV《天天年年》首播 共度充满回忆的岁末年终', by: '橘子娱乐'
+          })
+        }, operationList)
+
+      }
+    }, add)
+
+
+    const remove = document.querySelector('#remove');
+    setProps({
+      onClick() {
+        setProps({
+          list: operationList.list.slice(0, -1)
+        }, operationList)
+
+      }
+    }, remove)
+
+
+
+
+  </script>
 
 </body>
+
 </html>
