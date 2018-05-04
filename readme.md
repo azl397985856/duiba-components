@@ -1,6 +1,6 @@
 # Intro
 
-兑吧 web component
+duiba web component
 
 ## how to dev
 
@@ -65,7 +65,7 @@ setProps(
 
 ### what you get
 
-![duiba-component]()
+![duiba-component](https://github.com/azl397985856/duiba-components/blob/master/screenshots/duiba-component.png)
 
 ## directory
 
